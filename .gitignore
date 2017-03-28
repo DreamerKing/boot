@@ -1,0 +1,7 @@
+.idea
+.tmp/
+src/app/techs/
+.git/
+coverage/
+dist/
+node_modules/
