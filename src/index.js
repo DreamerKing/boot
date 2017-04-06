@@ -3,13 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 
-import {Main} from './app/main';
+import StudentLogin from './components/student/login';
 
-import './index.less';
+import './public/index.less';
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={Main}/>
+    <Route path="/" component={StudentLogin}/>
   </Router>,
   document.getElementById('root')
 );

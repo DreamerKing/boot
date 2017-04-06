@@ -64,6 +64,15 @@ module.exports = {
     //   }
     // ]
   },
+  // devServer: {
+  //   proxy: {
+  //     '/api/*': {
+  //       target: 'http://139.196.14.118:80',
+  //       changeOrigin: true,
+  //       secure: false
+  //     }
+  //   }
+  // },
   plugins: [
     // new webpack.DefinePlugin({
     //   'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
@@ -72,7 +81,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     FailPlugin,
     new HtmlWebpackPlugin({
-      template: conf.path.src('index.html')
+      template: conf.path.src('/public/index.html')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -83,11 +92,19 @@ module.exports = {
     })
   ],
   devtool: 'source-map',
+  /*resolve: {
+    extensions: ['.js','.json', '.less', ' '],
+    alias: {
+      'components': path.join(conf.path.src, '/components'),
+    }
+  },*/
+  //Webpack出口
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    // publicPath: path.join(process.cwd(), conf.paths.tmp),
+    //publicPath: path.join(process.cwd(), conf.paths.tmp),
     filename: 'index.js'
   },
+  //Webpack入口
   entry: [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
